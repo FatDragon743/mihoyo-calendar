@@ -1,0 +1,11 @@
+# 工作区记忆与自动化记录（不上传）
+.workbuddy/
+_tmp/
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统
+.DS_Store
+Thumbs.db

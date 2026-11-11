@@ -1,0 +1,1476 @@
+{
+ "id": "zzz",
+ "name": "绝区零",
+ "tagline": "新艾利都时间线",
+ "icon": "◆",
+ "accent": "#e8a33d",
+ "wiki": "zzz",
+ "rules": {
+  "VERSION_DAYS": 42,
+  "MINOR_MAX": 8,
+  "HALF2_OFFSET": 20,
+  "LIVE_OFFSET": -12,
+  "LIVE_TIME": "周五 19:00",
+  "CODE_EXPIRE_DAYS": 1,
+  "CODE_EXPIRE_TIME": "23:59",
+  "SPLASH_FIRST": -8,
+  "PV_LAST": -3,
+  "DEMO_LAST": null,
+  "RERUN_FIRST": null,
+  "HAS_DEMO": false,
+  "RERUN_INTRO": false,
+  "CALIBRATED": false,
+  "PHASE_WORD": "频段",
+  "WEAPON_WORD": "音擎",
+  "CYCLE_NOTE": "6 周一个版本，周三更新；下半频段约在上半开启后 20 天切换",
+  "CODE_NOTE": "前瞻直播兑换码一般在次日 23:59 失效，以直播提示为准"
+ },
+ "sources": [
+  {
+   "label": "绝区零Wiki·版本新增内容",
+   "url": "https://wiki.biligame.com/zzz/版本新增内容"
+  },
+  {
+   "label": "绝区零Wiki·往期调频",
+   "url": "https://wiki.biligame.com/zzz/往期调频"
+  }
+ ],
+ "versions": [
+  {
+   "version": "1.0",
+   "major": true,
+   "start": "2024-07-04",
+   "title": "欢迎来到新艾利都",
+   "region": "",
+   "characters": ""
+  },
+  {
+   "version": "1.1",
+   "major": false,
+   "start": "2024-08-14",
+   "title": "卧底蓝调",
+   "region": "",
+   "characters": "青衣、简、赛斯"
+  },
+  {
+   "version": "1.2",
+   "major": false,
+   "start": "2024-09-25",
+   "title": "火狱骑行",
+   "region": "",
+   "characters": "凯撒、柏妮思"
+  },
+  {
+   "version": "1.3",
+   "major": false,
+   "start": "2024-11-06",
+   "title": "虚拟杀机",
+   "region": "",
+   "characters": "月城柳、莱特"
+  },
+  {
+   "version": "1.4",
+   "major": false,
+   "start": "2024-12-18",
+   "title": "星流霆击",
+   "region": "",
+   "characters": "星见雅、浅羽悠真"
+  },
+  {
+   "version": "1.5",
+   "major": false,
+   "start": "2025-01-22",
+   "title": "闪耀的此刻",
+   "region": "",
+   "characters": "耀嘉音、伊芙琳"
+  },
+  {
+   "version": "1.6",
+   "major": false,
+   "start": "2025-03-12",
+   "title": "在被遗忘的废墟之上",
+   "region": "",
+   "characters": "零号·安比、「扳机」"
+  },
+  {
+   "version": "1.7",
+   "major": false,
+   "start": "2025-04-23",
+   "title": "将眼泪与过往一同埋葬",
+   "region": "",
+   "characters": "薇薇安、雨果"
+  },
+  {
+   "version": "2.0",
+   "major": true,
+   "start": "2025-06-06",
+   "title": "云霞同归处",
+   "region": "澄辉坪、[空洞] 航天城",
+   "characters": "仪玄、橘福福、潘引壶"
+  },
+  {
+   "version": "2.1",
+   "major": false,
+   "start": "2025-07-16",
+   "title": "迟吟的浪涌",
+   "region": "",
+   "characters": "浮波柚叶、爱丽丝"
+  },
+  {
+   "version": "2.2",
+   "major": false,
+   "start": "2025-09-04",
+   "title": "不要温和地走入那良夜",
+   "region": "",
+   "characters": "「席德」、奥菲丝&「鬼火」"
+  },
+  {
+   "version": "2.3",
+   "major": false,
+   "start": "2025-10-15",
+   "title": "可曾记得梦",
+   "region": "[空洞] 昔丘",
+   "characters": "卢西娅、伊德海莉、狛野真斗"
+  },
+  {
+   "version": "2.4",
+   "major": false,
+   "start": "2025-11-26",
+   "title": "将临未抵的深渊",
+   "region": "",
+   "characters": "琉音、般岳"
+  },
+  {
+   "version": "2.5",
+   "major": false,
+   "start": "2025-12-30",
+   "title": "微光引灯时",
+   "region": "[空洞] 港口工厂旧址、[空洞] 辉瓷加工基地、[空洞] 辉岭石矿场、[空洞] 青溟秘境",
+   "characters": "叶瞬光、照"
+  },
+  {
+   "version": "2.6",
+   "major": false,
+   "start": "2026-02-06",
+   "title": "旧梦的安可曲",
+   "region": "",
+   "characters": "千夏、爱芮"
+  },
+  {
+   "version": "2.7",
+   "major": false,
+   "start": "2026-03-24",
+   "title": "英雄不死于往昔",
+   "region": "",
+   "characters": "南宫羽、希希芙"
+  },
+  {
+   "version": "2.8",
+   "major": false,
+   "start": "2026-05-06",
+   "title": "新·艾利都日落时",
+   "region": "",
+   "characters": "普罗米娅、星徽·比利"
+  },
+  {
+   "version": "3.0",
+   "major": true,
+   "start": "2026-06-17",
+   "title": "某个梦游者的自白",
+   "region": "布亚斯特城区、[管制区] 算枢局、[管制区] 能源区、[空洞] 沉没回廊",
+   "characters": "维琳娜、诺姆、佩洛伊斯"
+  },
+  {
+   "version": "3.1",
+   "major": false,
+   "start": "2026-07-29",
+   "title": "漫长的告别",
+   "region": "",
+   "characters": "蕾米埃尔、希格莉德"
+  },
+  {
+   "version": "3.2",
+   "major": false,
+   "start": "2026-09-09",
+   "title": "她与她的隐秘往事",
+   "region": "维尔乌姆城区、[空洞]罗斯威克",
+   "characters": "克拉蕾、洛克茜"
+  },
+  {
+   "version": "3.3",
+   "major": false,
+   "start": "2026-10-21",
+   "title": "重返天空的旅程",
+   "region": "",
+   "characters": "",
+   "fromBanner": true
+  }
+ ],
+ "banners": [
+  {
+   "phase": "1.0上半",
+   "version": "1.0",
+   "half": "上半",
+   "start": "2024-07-04",
+   "end": "2024-07-23",
+   "startTime": "10:00",
+   "character": [
+    {
+     "name": "慵懒逐浪",
+     "five": [
+      "艾莲"
+     ],
+     "four": [
+      "苍角",
+      "安东"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "深海访客"
+    ]
+   }
+  },
+  {
+   "phase": "1.0下半",
+   "version": "1.0",
+   "half": "下半",
+   "start": "2024-07-24",
+   "end": "2024-08-13",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "直如朱丝绳",
+     "five": [
+      "朱鸢"
+     ],
+     "four": [
+      "妮可",
+      "本"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "防暴者Ⅵ型"
+    ]
+   }
+  },
+  {
+   "phase": "1.1上半",
+   "version": "1.1",
+   "half": "上半",
+   "start": "2024-08-14",
+   "end": "2024-09-03",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "青如玉壶冰",
+     "five": [
+      "青衣"
+     ],
+     "four": [
+      "比利",
+      "可琳"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "玉壶青冰"
+    ]
+   }
+  },
+  {
+   "phase": "1.1下半",
+   "version": "1.1",
+   "half": "下半",
+   "start": "2024-09-04",
+   "end": "2024-09-24",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "『查无此人』",
+     "five": [
+      "简"
+     ],
+     "four": [
+      "赛斯",
+      "安比"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "淬锋钳刺"
+    ]
+   }
+  },
+  {
+   "phase": "1.2上半",
+   "version": "1.2",
+   "half": "上半",
+   "start": "2024-09-25",
+   "end": "2024-10-15",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "荣焰桂冠",
+     "five": [
+      "凯撒"
+     ],
+     "four": [
+      "派派",
+      "安东"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "奔袭獠牙"
+    ]
+   }
+  },
+  {
+   "phase": "1.2下半",
+   "version": "1.2",
+   "half": "下半",
+   "start": "2024-10-16",
+   "end": "2024-11-05",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "天生丽炽",
+     "five": [
+      "柏妮思"
+     ],
+     "four": [
+      "露西",
+      "妮可"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "灼心摇壶"
+    ]
+   }
+  },
+  {
+   "phase": "1.3上半",
+   "version": "1.3",
+   "half": "上半",
+   "start": "2024-11-06",
+   "end": "2024-11-26",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "休心沐月",
+     "five": [
+      "柳"
+     ],
+     "four": [
+      "安比",
+      "比利"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "时流贤者"
+    ]
+   }
+  },
+  {
+   "phase": "1.3下半",
+   "version": "1.3",
+   "half": "下半",
+   "start": "2024-11-27",
+   "end": "2024-12-17",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "余烬之冕",
+     "five": [
+      "莱特"
+     ],
+     "four": [
+      "本",
+      "可琳"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "焰心桂冠"
+    ]
+   }
+  },
+  {
+   "phase": "1.4上半",
+   "version": "1.4",
+   "half": "上半",
+   "start": "2024-12-18",
+   "end": "2025-01-21",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "砺世澄沧",
+     "five": [
+      "雅"
+     ],
+     "four": [
+      "派派",
+      "苍角"
+     ]
+    },
+    {
+     "name": "循此苦旅",
+     "five": [
+      "悠真"
+     ],
+     "four": [
+      "露西",
+      "赛斯"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "霰落星殿"
+    ]
+   }
+  },
+  {
+   "phase": "1.5上半",
+   "version": "1.5",
+   "half": "上半",
+   "start": "2025-01-22",
+   "end": "2025-02-11",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "千千阙音",
+     "five": [
+      "耀嘉音"
+     ],
+     "four": [
+      "安比",
+      "可琳"
+     ]
+    },
+    {
+     "name": "慵懒逐浪",
+     "five": [
+      "艾莲"
+     ],
+     "four": [
+      "安比",
+      "可琳"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "玲珑妆匣"
+    ]
+   }
+  },
+  {
+   "phase": "1.5下半",
+   "version": "1.5",
+   "half": "下半",
+   "start": "2025-02-12",
+   "end": "2025-03-11",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "光与影的纱网",
+     "five": [
+      "伊芙琳"
+     ],
+     "four": [
+      "安东",
+      "妮可"
+     ]
+    },
+    {
+     "name": "青如玉壶冰",
+     "five": [
+      "青衣"
+     ],
+     "four": [
+      "安东",
+      "妮可"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "心弦夜响"
+    ]
+   }
+  },
+  {
+   "phase": "1.6上半",
+   "version": "1.6",
+   "half": "上半",
+   "start": "2025-03-12",
+   "end": "2025-04-01",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "露电倒影",
+     "five": [
+      "零号·安比"
+     ],
+     "four": [
+      "波可娜",
+      "本"
+     ]
+    },
+    {
+     "name": "天生丽炽",
+     "five": [
+      "柏妮思"
+     ],
+     "four": [
+      "波可娜",
+      "本"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "牺牲洁纯"
+    ]
+   }
+  },
+  {
+   "phase": "1.6下半",
+   "version": "1.6",
+   "half": "下半",
+   "start": "2025-04-02",
+   "end": "2025-04-22",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "冥目幽华",
+     "five": [
+      "「扳机」"
+     ],
+     "four": [
+      "露西",
+      "比利"
+     ]
+    },
+    {
+     "name": "直如朱丝绳",
+     "five": [
+      "朱鸢"
+     ],
+     "four": [
+      "露西",
+      "比利"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "索魂影眸"
+    ]
+   }
+  },
+  {
+   "phase": "1.7上半",
+   "version": "1.7",
+   "half": "上半",
+   "start": "2025-04-23",
+   "end": "2025-05-13",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "飞鸟坠入良夜",
+     "five": [
+      "薇薇安"
+     ],
+     "four": [
+      "派派",
+      "赛斯"
+     ]
+    },
+    {
+     "name": "『查无此人』",
+     "five": [
+      "简"
+     ],
+     "four": [
+      "派派",
+      "赛斯"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "飞鸟星梦"
+    ]
+   }
+  },
+  {
+   "phase": "1.7下半",
+   "version": "1.7",
+   "half": "下半",
+   "start": "2025-05-14",
+   "end": "2025-06-05",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "譬如昨日死",
+     "five": [
+      "雨果"
+     ],
+     "four": [
+      "苍角",
+      "安东"
+     ]
+    },
+    {
+     "name": "余烬之冕",
+     "five": [
+      "莱特"
+     ],
+     "four": [
+      "苍角",
+      "安东"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "千面日陨"
+    ]
+   }
+  },
+  {
+   "phase": "2.0上半",
+   "version": "2.0",
+   "half": "上半",
+   "start": "2025-06-06",
+   "end": "2025-06-24",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "独步沧溟",
+     "five": [
+      "仪玄"
+     ],
+     "four": [
+      "潘引壶",
+      "波可娜"
+     ]
+    },
+    {
+     "name": "千千阙音",
+     "five": [
+      "耀嘉音"
+     ],
+     "four": [
+      "潘引壶",
+      "波可娜"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "青溟笼舍"
+    ]
+   }
+  },
+  {
+   "phase": "2.0下半",
+   "version": "2.0",
+   "half": "下半",
+   "start": "2025-06-25",
+   "end": "2025-07-15",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "福福生威",
+     "five": [
+      "橘福福"
+     ],
+     "four": [
+      "本",
+      "可琳"
+     ]
+    },
+    {
+     "name": "荣焰桂冠",
+     "five": [
+      "凯撒"
+     ],
+     "four": [
+      "本",
+      "可琳"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "福虓炉炉"
+    ]
+   }
+  },
+  {
+   "phase": "2.1上半",
+   "version": "2.1",
+   "half": "上半",
+   "start": "2025-07-16",
+   "end": "2025-07-28",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "戏语幽谭",
+     "five": [
+      "柚叶"
+     ],
+     "four": [
+      "派派",
+      "比利"
+     ]
+    },
+    {
+     "name": "砺世澄沧",
+     "five": [
+      "雅"
+     ],
+     "four": [
+      "派派",
+      "比利"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "狸法七变化"
+    ]
+   }
+  },
+  {
+   "phase": "3.1上半",
+   "version": "3.1",
+   "half": "上半",
+   "start": "2025-07-29",
+   "end": "2025-07-28",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "复乐园",
+     "five": [
+      "蕾米埃尔"
+     ],
+     "four": []
+    }
+   ],
+   "weapon": {
+    "five": [
+     "空羽复归之诗"
+    ]
+   }
+  },
+  {
+   "phase": "3.1上半",
+   "version": "3.1",
+   "half": "上半",
+   "start": "2025-07-29",
+   "end": "2025-08-05",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "霓色天使",
+     "five": [
+      "爱芮"
+     ],
+     "four": []
+    }
+   ],
+   "weapon": {
+    "five": [
+     "壳中之灵"
+    ]
+   }
+  },
+  {
+   "phase": "2.1下半",
+   "version": "2.1",
+   "half": "下半",
+   "start": "2025-08-06",
+   "end": "2025-09-03",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "馥草芳誓",
+     "five": [
+      "爱丽丝"
+     ],
+     "four": [
+      "苍角",
+      "赛斯"
+     ]
+    },
+    {
+     "name": "休心沐月",
+     "five": [
+      "柳"
+     ],
+     "four": [
+      "苍角",
+      "赛斯"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "十方锻星"
+    ]
+   }
+  },
+  {
+   "phase": "2.2上半",
+   "version": "2.2",
+   "half": "上半",
+   "start": "2025-09-04",
+   "end": "2025-09-23",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "泪铸生花",
+     "five": [
+      "「席德」"
+     ],
+     "four": [
+      "安比",
+      "妮可"
+     ]
+    },
+    {
+     "name": "冥目幽华",
+     "five": [
+      "「扳机」"
+     ],
+     "four": [
+      "安比",
+      "妮可"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "机巧心种"
+    ]
+   }
+  },
+  {
+   "phase": "2.2下半",
+   "version": "2.2",
+   "half": "下半",
+   "start": "2025-09-24",
+   "end": "2025-10-14",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "孽火两畔",
+     "five": [
+      "奥菲丝&「鬼火」"
+     ],
+     "four": [
+      "露西",
+      "安东"
+     ]
+    },
+    {
+     "name": "光与影的纱网",
+     "five": [
+      "伊芙琳"
+     ],
+     "four": [
+      "露西",
+      "安东"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "嚣枪喧焰"
+    ]
+   }
+  },
+  {
+   "phase": "2.3上半",
+   "version": "2.3",
+   "half": "上半",
+   "start": "2025-10-15",
+   "end": "2025-11-04",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "绮夜游灯",
+     "five": [
+      "卢西娅"
+     ],
+     "four": [
+      "真斗",
+      "派派"
+     ]
+    },
+    {
+     "name": "飞鸟坠入良夜",
+     "five": [
+      "薇薇安"
+     ],
+     "four": [
+      "真斗",
+      "派派"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "铸梦炉歌"
+    ]
+   }
+  },
+  {
+   "phase": "2.3下半",
+   "version": "2.3",
+   "half": "下半",
+   "start": "2025-11-05",
+   "end": "2025-11-25",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "孤旅同梦",
+     "five": [
+      "伊德海莉"
+     ],
+     "four": [
+      "潘引壶",
+      "波可娜"
+     ]
+    },
+    {
+     "name": "福福生威",
+     "five": [
+      "橘福福"
+     ],
+     "four": [
+      "潘引壶",
+      "波可娜"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "海妖摇篮"
+    ]
+   }
+  },
+  {
+   "phase": "2.4上半",
+   "version": "2.4",
+   "half": "上半",
+   "start": "2025-11-26",
+   "end": "2025-12-16",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "唤寂昔声",
+     "five": [
+      "琉音"
+     ],
+     "four": [
+      "可琳",
+      "比利"
+     ]
+    },
+    {
+     "name": "譬如昨日死",
+     "five": [
+      "雨果"
+     ],
+     "four": [
+      "可琳",
+      "比利"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "昨夜来电"
+    ]
+   }
+  },
+  {
+   "phase": "2.4下半",
+   "version": "2.4",
+   "half": "下半",
+   "start": "2025-12-17",
+   "end": "2025-12-29",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "渡夜焚心",
+     "five": [
+      "般岳"
+     ],
+     "four": [
+      "苍角",
+      "赛斯"
+     ]
+    },
+    {
+     "name": "慵懒逐浪",
+     "five": [
+      "艾莲"
+     ],
+     "four": [
+      "苍角",
+      "赛斯"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "怒目金刚"
+    ]
+   }
+  },
+  {
+   "phase": "2.5上半",
+   "version": "2.5",
+   "half": "上半",
+   "start": "2025-12-30",
+   "end": "2026-02-05",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "光落于指尖",
+     "five": [
+      "叶瞬光"
+     ],
+     "four": [
+      "妮可",
+      "露西"
+     ]
+    },
+    {
+     "name": "无价之心",
+     "five": [
+      "照"
+     ],
+     "four": [
+      "安比",
+      "本"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "云霓孤光"
+    ]
+   }
+  },
+  {
+   "phase": "2.6上半",
+   "version": "2.6",
+   "half": "上半",
+   "start": "2026-02-06",
+   "end": "2026-03-03",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "四三拍谬想",
+     "five": [
+      "千夏"
+     ],
+     "four": [
+      "可琳",
+      "比利"
+     ]
+    },
+    {
+     "name": "独步沧溟",
+     "five": [
+      "仪玄"
+     ],
+     "four": [
+      "可琳",
+      "比利"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "思络成歌"
+    ]
+   }
+  },
+  {
+   "phase": "2.6下半",
+   "version": "2.6",
+   "half": "下半",
+   "start": "2026-03-04",
+   "end": "2026-03-23",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "霓色天使",
+     "five": [
+      "爱芮"
+     ],
+     "four": [
+      "安东",
+      "赛斯"
+     ]
+    },
+    {
+     "name": "戏语幽谭",
+     "five": [
+      "柚叶"
+     ],
+     "four": [
+      "安东",
+      "赛斯"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "壳中之灵"
+    ]
+   }
+  },
+  {
+   "phase": "2.7上半",
+   "version": "2.7",
+   "half": "上半",
+   "start": "2026-03-24",
+   "end": "2026-04-14",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "视线定格公理",
+     "five": [
+      "南宫羽"
+     ],
+     "four": [
+      "妮可",
+      "派派"
+     ]
+    },
+    {
+     "name": "孤旅同梦",
+     "five": [
+      "伊德海莉"
+     ],
+     "four": [
+      "妮可",
+      "派派"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "霓虹妄想"
+    ]
+   }
+  },
+  {
+   "phase": "2.7下半",
+   "version": "2.7",
+   "half": "下半",
+   "start": "2026-04-15",
+   "end": "2026-05-05",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "贪食进化论",
+     "five": [
+      "希希芙"
+     ],
+     "four": [
+      "波可娜",
+      "本"
+     ]
+    },
+    {
+     "name": "泪铸生花",
+     "five": [
+      "「席德」"
+     ],
+     "four": [
+      "波可娜",
+      "本"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "鳞齿寻踪"
+    ]
+   }
+  },
+  {
+   "phase": "2.8上半",
+   "version": "2.8",
+   "half": "上半",
+   "start": "2026-05-06",
+   "end": "2026-05-26",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "冷雨将尽之夜",
+     "five": [
+      "普罗米娅"
+     ],
+     "four": [
+      "苍角",
+      "露西"
+     ]
+    },
+    {
+     "name": "绮夜游灯",
+     "five": [
+      "卢西娅"
+     ],
+     "four": [
+      "苍角",
+      "露西"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "朔月裁霜"
+    ]
+   }
+  },
+  {
+   "phase": "2.8下半",
+   "version": "2.8",
+   "half": "下半",
+   "start": "2026-05-27",
+   "end": "2026-06-16",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "星徽于此闪耀",
+     "five": [
+      "星徽·比利"
+     ],
+     "four": [
+      "潘引壶",
+      "真斗"
+     ]
+    },
+    {
+     "name": "孽火两畔",
+     "five": [
+      "奥菲丝&「鬼火」"
+     ],
+     "four": [
+      "潘引壶",
+      "真斗"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "辉骑面铠"
+    ]
+   }
+  },
+  {
+   "phase": "3.0上半",
+   "version": "3.0",
+   "half": "上半",
+   "start": "2026-06-17",
+   "end": "2026-07-07",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "凛风吟仪",
+     "five": [
+      "维琳娜"
+     ],
+     "four": [
+      "妮可",
+      "派派"
+     ]
+    },
+    {
+     "name": "光落于指尖",
+     "five": [
+      "叶瞬光"
+     ],
+     "four": [
+      "妮可",
+      "派派"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "琳琅鎏心"
+    ]
+   }
+  },
+  {
+   "phase": "3.0下半",
+   "version": "3.0",
+   "half": "下半",
+   "start": "2026-07-08",
+   "end": "2026-07-28",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "天才不等式",
+     "five": [
+      "诺姆"
+     ],
+     "four": [
+      "波可娜",
+      "可琳"
+     ]
+    },
+    {
+     "name": "四三拍谬想",
+     "five": [
+      "千夏"
+     ],
+     "four": [
+      "波可娜",
+      "可琳"
+     ]
+    }
+   ],
+   "weapon": {
+    "five": [
+     "首席跟班"
+    ]
+   }
+  },
+  {
+   "phase": "3.1下半",
+   "version": "3.1",
+   "half": "下半",
+   "start": "2026-08-19",
+   "end": "2026-09-08",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "直到天空沉落",
+     "five": [
+      "希格莉德"
+     ],
+     "four": []
+    }
+   ],
+   "weapon": {
+    "five": [
+     "骁骑礼赞"
+    ]
+   }
+  },
+  {
+   "phase": "3.2上半",
+   "version": "3.2",
+   "half": "上半",
+   "start": "2026-09-09",
+   "end": "2026-09-29",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "红月初升",
+     "five": [
+      "克拉蕾"
+     ],
+     "four": []
+    },
+    {
+     "name": "视线定格公理",
+     "five": [
+      "南宫羽"
+     ],
+     "four": []
+    }
+   ],
+   "weapon": {
+    "five": [
+     "猩红渴望"
+    ]
+   }
+  },
+  {
+   "phase": "3.2下半",
+   "version": "3.2",
+   "half": "下半",
+   "start": "2026-09-30",
+   "end": "2026-10-20",
+   "startTime": "12:00",
+   "character": [
+    {
+     "name": "烬夜安眠",
+     "five": [
+      "洛克茜"
+     ],
+     "four": []
+    },
+    {
+     "name": "冷雨将尽之夜",
+     "five": [
+      "普罗米娅"
+     ],
+     "four": []
+    }
+   ],
+   "weapon": {
+    "five": [
+     "绯月银棺"
+    ]
+   }
+  },
+  {
+   "phase": "3.3上半",
+   "version": "3.3",
+   "half": "上半",
+   "start": "2026-10-21",
+   "end": "2026-11-10",
+   "startTime": "11:00",
+   "character": [
+    {
+     "name": "倾掷浮生",
+     "five": [
+      "菲欧妮"
+     ],
+     "four": []
+    },
+    {
+     "name": "凛风吟仪",
+     "five": [
+      "维琳娜"
+     ],
+     "four": []
+    }
+   ],
+   "weapon": {
+    "five": [
+     "涅槃初翎"
+    ]
+   }
+  }
+ ],
+ "milestones": [],
+ "generated": "2026-11-11 09:20"
+}

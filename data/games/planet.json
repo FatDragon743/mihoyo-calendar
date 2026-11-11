@@ -1,0 +1,78 @@
+{
+ "id": "planet",
+ "name": "星布谷地",
+ "tagline": "公测倒计时 · 星球生活模拟",
+ "icon": "❋",
+ "accent": "#4fa98a",
+ "wiki": null,
+ "rules": {
+  "VERSION_DAYS": null,
+  "MINOR_MAX": 8,
+  "HALF2_OFFSET": null,
+  "LIVE_OFFSET": null,
+  "LIVE_TIME": "",
+  "CODE_EXPIRE_DAYS": null,
+  "CODE_EXPIRE_TIME": "",
+  "SPLASH_FIRST": null,
+  "PV_LAST": null,
+  "DEMO_LAST": null,
+  "RERUN_FIRST": null,
+  "HAS_DEMO": false,
+  "RERUN_INTRO": false,
+  "CALIBRATED": false,
+  "PHASE_WORD": "卡池",
+  "WEAPON_WORD": "武器池",
+  "MILESTONE_ONLY": true,
+  "CYCLE_NOTE": "尚未公测（2026-12-04 上线），官方未公布版本周期，暂不推算版本",
+  "CODE_NOTE": "公测兑换码需在游戏内兑换，有效期以官方公告为准"
+ },
+ "sources": [
+  {
+   "label": "星布谷地官网",
+   "url": "https://planet.mihoyo.com/"
+  }
+ ],
+ "milestones": [
+  {
+   "date": "2026-11-01",
+   "type": "live",
+   "title": "公测前瞻特别节目 19:00",
+   "detail": "官方直播公布公测定档与预约福利；同期发布公测定档 PV 与「连接测试」PV",
+   "time": "19:00"
+  },
+  {
+   "date": "2026-11-30",
+   "type": "event",
+   "title": "「来自星海的礼物」预约活动截止",
+   "detail": "2026-10-30 10:00 ~ 2026-11-30 23:59，预约/观看 PV/关注官号/邀请好友可抽奖",
+   "time": "23:59"
+  },
+  {
+   "date": "2026-12-04",
+   "type": "launch",
+   "title": "全球公测上线（PC / iOS / Android）",
+   "detail": "支持跨平台互通；公测登录即可领取预约奖励（星空贴贴手灯、小星苗套装等）。2027 年登陆 Nintendo Switch 2，具体日期未公布",
+   "predicted": false
+  },
+  {
+   "date": "2027-01-03",
+   "type": "code",
+   "title": "公测兑换码 XBGD1204 过期",
+   "detail": "「奇物海哨」×10，2027-01-03 10:00（UTC+8）前于游戏内「设置 → 账号 → 兑换码」使用",
+   "time": "10:00"
+  }
+ ],
+ "versions": [
+  {
+   "version": "公测",
+   "major": true,
+   "start": "2026-12-04",
+   "title": "星布谷地",
+   "region": "",
+   "characters": "",
+   "launch": true
+  }
+ ],
+ "banners": [],
+ "generated": "2026-11-11 09:20"
+}

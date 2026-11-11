@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>米哈游游戏日历 · 原神 / 星铁 / 绝区零 / 星布谷地</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">✦</span>
+    <div>
+      <h1 id="appTitle">米哈游游戏日历</h1>
+      <p class="subtitle" id="appSub">四款游戏合并总览 · 历史事件 · 卡池阵容 · 未来预测 · 到期提醒</p>
+    </div>
+  </div>
+  <div class="topbar-actions">
+    <button id="btnNotify" class="btn ghost" title="开启后，日历页面打开期间会在事件临近时弹出系统通知">🔔 开启提醒</button>
+    <button id="btnToday" class="btn">回到今天</button>
+  </div>
+</header>
+
+<nav class="gamebar">
+  <div id="gameTabs" class="game-tabs"></div>
+</nav>
+
+<main class="layout">
+  <!-- 侧栏 -->
+  <aside class="side">
+    <section class="card">
+      <h2>📌 未来提醒</h2>
+      <div class="tabs upcoming-tabs">
+        <button class="tab active" data-range="14">14 天内</button>
+        <button class="tab" data-range="30">30 天内</button>
+        <button class="tab" data-range="60">60 天内</button>
+      </div>
+      <ul id="upcomingList" class="upcoming"></ul>
+    </section>
+
+    <section class="card" id="currentBannerCard">
+      <h2 id="bannerCardTitle">🎴 当前 UP</h2>
+      <div id="currentBanner"></div>
+    </section>
+
+    <section class="card" id="charCard">
+      <h2 id="charCardTitle">🔍 角色 UP 查询</h2>
+      <input id="charSearch" class="search" type="text" placeholder="输入角色名，如：芙宁娜 / 黄泉">
+      <div id="charResult" class="char-result"><span class="muted">输入角色名可查其全部 UP 记录与距今时间</span></div>
+    </section>
+
+    <section class="card">
+      <h2 id="versionCardTitle">⏳ 当前版本</h2>
+      <div id="currentVersion" class="current-version"></div>
+    </section>
+
+    <section class="card">
+      <h2>📖 使用说明</h2>
+      <ul class="help" id="helpList"></ul>
+    </section>
+  </aside>
+
+  <!-- 日历 -->
+  <section class="main">
+    <div class="cal-head">
+      <button id="prevMonth" class="btn nav">‹</button>
+      <h2 id="monthTitle">2026年11月</h2>
+      <button id="nextMonth" class="btn nav">›</button>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="week-row">
+      <span>星期一</span><span>星期二</span><span>星期三</span><span>星期四</span><span>星期五</span><span class="weekend">星期六</span><span class="weekend">星期日</span>
+    </div>
+    <div id="calendar" class="calendar"></div>
+    <div id="dayDetail" class="day-detail hidden"></div>
+  </section>
+</main>
+
+<!-- 立绘大图弹窗 -->
+<div id="modal" class="modal hidden">
+  <div class="modal-body">
+    <button id="modalClose" class="modal-close">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<footer class="foot">
+  <span id="footSources"></span>
+</footer>
+
+<script src="data/games.js"></script>
+<script src="data/assets.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
