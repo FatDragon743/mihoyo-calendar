@@ -779,5 +779,219 @@ const ASSETS_BY_GAME = {
    "avatar": "data/avatars/sr/黑天鹅.png",
    "portrait": "data/portraits/sr/黑天鹅.png"
   }
+ },
+ "zzz": {
+  "「席德」": {
+   "avatar": "data/avatars/zzz/「席德」.png",
+   "portrait": "data/portraits/zzz/「席德」.png"
+  },
+  "「扳机」": {
+   "avatar": "data/avatars/zzz/「扳机」.png",
+   "portrait": "data/portraits/zzz/「扳机」.png"
+  },
+  "仪玄": {
+   "avatar": "data/avatars/zzz/仪玄.png",
+   "portrait": "data/portraits/zzz/仪玄.png"
+  },
+  "伊德海莉": {
+   "avatar": "data/avatars/zzz/伊德海莉.png",
+   "portrait": "data/portraits/zzz/伊德海莉.png"
+  },
+  "伊芙琳": {
+   "avatar": "data/avatars/zzz/伊芙琳.png",
+   "portrait": "data/portraits/zzz/伊芙琳.png"
+  },
+  "克拉蕾": {
+   "avatar": "data/avatars/zzz/克拉蕾.png",
+   "portrait": "data/portraits/zzz/克拉蕾.png"
+  },
+  "凯撒": {
+   "avatar": "data/avatars/zzz/凯撒.png",
+   "portrait": "data/portraits/zzz/凯撒.png"
+  },
+  "千夏": {
+   "avatar": "data/avatars/zzz/千夏.png",
+   "portrait": "data/portraits/zzz/千夏.png"
+  },
+  "南宫羽": {
+   "avatar": "data/avatars/zzz/南宫羽.png",
+   "portrait": "data/portraits/zzz/南宫羽.png"
+  },
+  "卢西娅": {
+   "avatar": "data/avatars/zzz/卢西娅.png",
+   "portrait": "data/portraits/zzz/卢西娅.png"
+  },
+  "可琳": {
+   "avatar": "data/avatars/zzz/可琳.png",
+   "portrait": "data/portraits/zzz/可琳.png"
+  },
+  "叶瞬光": {
+   "avatar": "data/avatars/zzz/叶瞬光.png",
+   "portrait": "data/portraits/zzz/叶瞬光.png"
+  },
+  "奥菲丝&「鬼火」": {
+   "avatar": "data/avatars/zzz/奥菲丝&「鬼火」.png",
+   "portrait": "data/portraits/zzz/奥菲丝&「鬼火」.png"
+  },
+  "妮可": {
+   "avatar": "data/avatars/zzz/妮可.png",
+   "portrait": "data/portraits/zzz/妮可.png"
+  },
+  "安东": {
+   "avatar": "data/avatars/zzz/安东.png",
+   "portrait": "data/portraits/zzz/安东.png"
+  },
+  "安比": {
+   "avatar": "data/avatars/zzz/安比.png",
+   "portrait": "data/portraits/zzz/安比.png"
+  },
+  "希希芙": {
+   "avatar": "data/avatars/zzz/希希芙.png",
+   "portrait": "data/portraits/zzz/希希芙.png"
+  },
+  "希格莉德": {
+   "avatar": "data/avatars/zzz/希格莉德.png",
+   "portrait": "data/portraits/zzz/希格莉德.png"
+  },
+  "悠真": {
+   "avatar": "data/avatars/zzz/悠真.png",
+   "portrait": "data/portraits/zzz/悠真.png"
+  },
+  "星徽·比利": {
+   "avatar": "data/avatars/zzz/星徽·比利.png",
+   "portrait": "data/portraits/zzz/星徽·比利.png"
+  },
+  "普罗米娅": {
+   "avatar": "data/avatars/zzz/普罗米娅.png",
+   "portrait": "data/portraits/zzz/普罗米娅.png"
+  },
+  "本": {
+   "avatar": "data/avatars/zzz/本.png",
+   "portrait": "data/portraits/zzz/本.png"
+  },
+  "朱鸢": {
+   "avatar": "data/avatars/zzz/朱鸢.png",
+   "portrait": "data/portraits/zzz/朱鸢.png"
+  },
+  "柏妮思": {
+   "avatar": "data/avatars/zzz/柏妮思.png",
+   "portrait": "data/portraits/zzz/柏妮思.png"
+  },
+  "柚叶": {
+   "avatar": "data/avatars/zzz/柚叶.png",
+   "portrait": "data/portraits/zzz/柚叶.png"
+  },
+  "柳": {
+   "avatar": "data/avatars/zzz/柳.png",
+   "portrait": "data/portraits/zzz/柳.png"
+  },
+  "橘福福": {
+   "avatar": "data/avatars/zzz/橘福福.png",
+   "portrait": "data/portraits/zzz/橘福福.png"
+  },
+  "比利": {
+   "avatar": "data/avatars/zzz/比利.png",
+   "portrait": "data/portraits/zzz/比利.png"
+  },
+  "波可娜": {
+   "avatar": "data/avatars/zzz/波可娜.png",
+   "portrait": "data/portraits/zzz/波可娜.png"
+  },
+  "洛克茜": {
+   "avatar": "data/avatars/zzz/洛克茜.png",
+   "portrait": "data/portraits/zzz/洛克茜.png"
+  },
+  "派派": {
+   "avatar": "data/avatars/zzz/派派.png",
+   "portrait": "data/portraits/zzz/派派.png"
+  },
+  "潘引壶": {
+   "avatar": "data/avatars/zzz/潘引壶.png",
+   "portrait": "data/portraits/zzz/潘引壶.png"
+  },
+  "照": {
+   "avatar": "data/avatars/zzz/照.png",
+   "portrait": "data/portraits/zzz/照.png"
+  },
+  "爱丽丝": {
+   "avatar": "data/avatars/zzz/爱丽丝.png",
+   "portrait": "data/portraits/zzz/爱丽丝.png"
+  },
+  "爱芮": {
+   "avatar": "data/avatars/zzz/爱芮.png",
+   "portrait": "data/portraits/zzz/爱芮.png"
+  },
+  "琉音": {
+   "avatar": "data/avatars/zzz/琉音.png",
+   "portrait": "data/portraits/zzz/琉音.png"
+  },
+  "真斗": {
+   "avatar": "data/avatars/zzz/真斗.png",
+   "portrait": "data/portraits/zzz/真斗.png"
+  },
+  "简": {
+   "avatar": "data/avatars/zzz/简.png",
+   "portrait": "data/portraits/zzz/简.png"
+  },
+  "维琳娜": {
+   "avatar": "data/avatars/zzz/维琳娜.png",
+   "portrait": "data/portraits/zzz/维琳娜.png"
+  },
+  "耀嘉音": {
+   "avatar": "data/avatars/zzz/耀嘉音.png",
+   "portrait": "data/portraits/zzz/耀嘉音.png"
+  },
+  "般岳": {
+   "avatar": "data/avatars/zzz/般岳.png",
+   "portrait": "data/portraits/zzz/般岳.png"
+  },
+  "艾莲": {
+   "avatar": "data/avatars/zzz/艾莲.png",
+   "portrait": "data/portraits/zzz/艾莲.png"
+  },
+  "苍角": {
+   "avatar": "data/avatars/zzz/苍角.png",
+   "portrait": "data/portraits/zzz/苍角.png"
+  },
+  "莱特": {
+   "avatar": "data/avatars/zzz/莱特.png",
+   "portrait": "data/portraits/zzz/莱特.png"
+  },
+  "蕾米埃尔": {
+   "avatar": "data/avatars/zzz/蕾米埃尔.png",
+   "portrait": "data/portraits/zzz/蕾米埃尔.png"
+  },
+  "薇薇安": {
+   "avatar": "data/avatars/zzz/薇薇安.png",
+   "portrait": "data/portraits/zzz/薇薇安.png"
+  },
+  "诺姆": {
+   "avatar": "data/avatars/zzz/诺姆.png",
+   "portrait": "data/portraits/zzz/诺姆.png"
+  },
+  "赛斯": {
+   "avatar": "data/avatars/zzz/赛斯.png",
+   "portrait": "data/portraits/zzz/赛斯.png"
+  },
+  "雅": {
+   "avatar": "data/avatars/zzz/雅.png",
+   "portrait": "data/portraits/zzz/雅.png"
+  },
+  "雨果": {
+   "avatar": "data/avatars/zzz/雨果.png",
+   "portrait": "data/portraits/zzz/雨果.png"
+  },
+  "零号·安比": {
+   "avatar": "data/avatars/zzz/零号·安比.png",
+   "portrait": "data/portraits/zzz/零号·安比.png"
+  },
+  "露西": {
+   "avatar": "data/avatars/zzz/露西.png",
+   "portrait": "data/portraits/zzz/露西.png"
+  },
+  "青衣": {
+   "avatar": "data/avatars/zzz/青衣.png",
+   "portrait": "data/portraits/zzz/青衣.png"
+  }
  }
 };

@@ -17,6 +17,8 @@
   --accent: #c8a45c;
   --launch: #3f9e7c;
   --event: #6b7a8f;
+  --shadow: 0 2px 10px rgba(150, 120, 60, .08);
+  --shadow-hover: 0 4px 16px rgba(150, 120, 60, .18);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -31,28 +33,14 @@ body {
   padding: 14px 28px;
   background: linear-gradient(135deg, #fdf9ef 0%, #f4ecd9 100%);
   border-bottom: 2px solid var(--gold);
+  box-shadow: 0 2px 12px rgba(150, 120, 60, .12);
+  position: sticky; top: 0; z-index: 20;
 }
 .brand { display: flex; align-items: center; gap: 12px; }
 .logo { font-size: 30px; color: var(--accent); }
 .topbar h1 { font-size: 22px; letter-spacing: 4px; color: var(--ink); }
-.subtitle { font-size: 12px; color: var(--ink-soft); letter-spacing: 2px; }
+.subtitle { font-size: 12px; color: var(--ink-soft); letter-spacing: 1px; }
 .topbar-actions { display: flex; gap: 10px; }
-
-.gamebar {
-  display: flex; gap: 8px; flex-wrap: wrap;
-  padding: 12px 28px 0;
-}
-.game-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
-.game-tab {
-  display: inline-flex; align-items: center; gap: 6px;
-  border: 1px solid var(--line); background: #fff; color: var(--ink-soft);
-  padding: 6px 14px; border-radius: 20px; cursor: pointer; font-size: 13px;
-  transition: all .15s;
-}
-.game-tab:hover { border-color: var(--accent); color: var(--ink); }
-.game-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.game-tab.active .gt-icon { color: #fff !important; }
-.gt-icon { font-size: 14px; line-height: 1; }
 
 .btn {
   border: 1px solid var(--gold);
@@ -64,7 +52,7 @@ body {
   font-size: 13px;
   transition: all .15s;
 }
-.btn:hover { background: var(--gold); color: #fff; }
+.btn:hover { background: var(--gold); color: #fff; box-shadow: var(--shadow); }
 .btn.ghost { border-color: var(--line); color: var(--ink-soft); }
 .btn.ghost:hover { border-color: var(--gold); color: var(--gold-deep); background: #fff; }
 .btn.nav { font-size: 20px; padding: 4px 14px; line-height: 1.4; }
@@ -78,6 +66,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 16px;
+  box-shadow: var(--shadow);
 }
 .card h2 { font-size: 15px; margin-bottom: 10px; color: var(--ink); }
 .help { font-size: 12px; color: var(--ink-soft); line-height: 1.8; padding-left: 16px; }
@@ -87,15 +76,23 @@ body {
 .tab {
   border: 1px solid var(--line); background: #fff; color: var(--ink-soft);
   padding: 4px 12px; border-radius: 20px; cursor: pointer; font-size: 12px;
+  transition: all .15s;
 }
+.tab:hover { border-color: var(--gold); color: var(--gold-deep); }
 .tab.active { background: var(--gold); border-color: var(--gold); color: #fff; }
 
+/* 未来提醒：按日期分组的行头 */
 .upcoming { list-style: none; max-height: 420px; overflow-y: auto; }
+.upcoming .date-head {
+  font-size: 11px; color: var(--gold-deep); font-weight: bold;
+  padding: 7px 4px 2px; letter-spacing: .5px;
+  border-bottom: 1px solid #f1ead9;
+}
 .upcoming li {
   display: flex; gap: 10px; align-items: flex-start;
-  padding: 8px 6px; border-bottom: 1px dashed var(--line); font-size: 13px;
+  padding: 7px 4px; font-size: 13px;
 }
-.upcoming li:last-child { border-bottom: none; }
+.upcoming li:not(.date-head):nth-child(odd of li:not(.date-head)) { }
 .upcoming .days {
   flex-shrink: 0; width: 52px; text-align: center;
   font-size: 11px; color: #fff; border-radius: 6px; padding: 3px 0; margin-top: 1px;
@@ -104,35 +101,26 @@ body {
 .upcoming .days.d1 { background: var(--live); }
 .upcoming .days.d7 { background: var(--update); }
 .upcoming .days.d30 { background: var(--ink-soft); }
-.upcoming .evt-title { line-height: 1.4; }
-.upcoming .evt-date { font-size: 11px; color: var(--ink-soft); }
+.upcoming .evt-title { line-height: 1.5; }
 
-.current-version .v-name { font-size: 16px; font-weight: bold; color: var(--gold-deep); }
-.current-version .v-title { font-size: 13px; margin: 4px 0; }
-.current-version .v-range { font-size: 12px; color: var(--ink-soft); }
-.current-version .v-progress {
-  height: 6px; background: #eee5d0; border-radius: 3px; margin-top: 10px; overflow: hidden;
-}
-.current-version .v-progress i {
-  display: block; height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--phase1));
-}
+/* 各游戏版本 */
+.gv-row { padding: 6px 0; border-bottom: 1px dashed var(--line); cursor: pointer; }
+.gv-row:last-child { border-bottom: none; }
+.gv-row:hover .gn { color: var(--gc, var(--gold-deep)); }
+.gv-head { display: flex; align-items: center; gap: 6px; font-size: 12.5px; }
+.gv-head .gn { font-size: 12.5px; }
+.gv-head .gv { color: var(--gc, var(--gold-deep)); font-weight: bold; }
+.gv-head em { margin-left: auto; font-style: normal; font-size: 11px; color: var(--ink-soft); text-align: right; }
+.gv-bar { height: 4px; background: #eee5d0; border-radius: 2px; margin-top: 5px; overflow: hidden; }
+.gv-bar i { display: block; height: 100%; background: var(--gc, var(--gold)); transition: width .4s; }
 
 .cal-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; flex-wrap: wrap; }
 .cal-head h2 { font-size: 20px; letter-spacing: 2px; }
-.legend { margin-left: auto; display: flex; gap: 12px; font-size: 11px; color: var(--ink-soft); flex-wrap: wrap; }
+.legend { margin-left: auto; display: flex; gap: 12px; font-size: 11px; color: var(--ink-soft); flex-wrap: wrap; align-items: center; }
 .legend .dot {
   display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px;
 }
-.dot.update { background: var(--update); }
-.dot.phase1 { background: var(--phase1); }
-.dot.phase2 { background: var(--phase2); }
-.dot.live { background: var(--live); }
-.dot.pv { background: var(--pv); }
-.dot.splash { background: var(--splash); }
-.dot.code { background: var(--code); }
-.dot.launch { background: var(--launch); }
-.dot.event { background: var(--event); }
+.legend .lg-note { color: var(--ink-soft); opacity: .85; }
 
 .week-row, .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
 .week-row span { text-align: center; font-size: 12px; color: var(--ink-soft); padding: 4px 0; }
@@ -143,22 +131,21 @@ body {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 10px;
-  min-height: 92px;
+  min-height: 100px;
   padding: 6px 8px;
   font-size: 12px;
   cursor: pointer;
-  transition: box-shadow .15s;
+  transition: box-shadow .15s, border-color .15s;
   overflow: hidden;
   position: relative;
 }
 .day .stripe {
   position: absolute; top: 0; left: 0; right: 0; height: 3px; display: block;
 }
-.day .stripe.p1 { background: var(--phase1); opacity: .65; }
-.day .stripe.p2 { background: var(--phase2); opacity: .65; }
-.day:hover { box-shadow: 0 3px 10px rgba(160, 130, 60, .25); }
-.day.empty { background: transparent; border: none; cursor: default; }
-.day.today { background: var(--today); border-color: var(--accent); }
+.day:hover { box-shadow: var(--shadow-hover); border-color: #d8c9a4; }
+.day.empty { background: transparent; border: none; cursor: default; box-shadow: none; }
+.day.today { background: var(--today); border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
+.day.sel { border-color: var(--gold-deep); box-shadow: 0 0 0 2px var(--gold-deep) inset; }
 .day .num { font-weight: bold; font-size: 14px; }
 .day.weekend .num { color: var(--phase1); }
 .day .num.today-num {
@@ -191,24 +178,35 @@ body {
 .tag.four { background: #ece8f7; color: #6b55a8; border: 1px solid #c5b8e6; }
 .muted { color: var(--ink-soft); font-size: 12px; }
 
-/* 当前 UP */
-.banner-phase { font-size: 14px; font-weight: bold; color: var(--gold-deep); margin-bottom: 8px; }
-.banner-pool {
-  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 6px;
-  background: #fffaf0;
+/* 各游戏在售 */
+.gp-row {
+  border: 1px solid var(--line); border-left: 3px solid var(--gc, #999);
+  border-radius: 8px; padding: 7px 9px; margin-bottom: 6px;
+  background: #fffdf8; cursor: pointer; transition: all .15s;
 }
-.pool-name { font-size: 12px; color: var(--ink-soft); }
-.pool-five { font-size: 14px; font-weight: bold; color: var(--phase1); margin: 2px 0; }
-.pool-four { font-size: 11px; color: var(--ink-soft); }
-.banner-weapon { font-size: 12px; color: var(--phase2); margin-top: 4px; }
-.banner-range { font-size: 11px; color: var(--ink-soft); margin-top: 6px; }
+.gp-row:last-child { margin-bottom: 0; }
+.gp-row:hover { border-color: var(--gc, var(--gold)); box-shadow: var(--shadow-hover); transform: translateX(2px); }
+.gp-name { font-size: 11px; color: var(--ink-soft); display: flex; align-items: center; gap: 5px; }
+.gp-name i { width: 6px; height: 6px; border-radius: 50%; background: var(--gc, #999); display: inline-block; flex-shrink: 0; }
+.gp-main { font-size: 12.5px; margin-top: 2px; line-height: 1.5; color: var(--ink); }
+.gp-sub { font-size: 11px; color: var(--ink-soft); margin-top: 1px; }
 
 /* 角色查询 */
 .search {
   width: 100%; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px;
   font-size: 13px; outline: none; background: #fff; color: var(--ink); margin-bottom: 8px;
+  transition: border-color .15s, box-shadow .15s;
 }
-.search:focus { border-color: var(--gold); }
+.search:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200, 164, 92, .15); }
+.quick-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.qchip {
+  display: inline-flex; align-items: center; gap: 4px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+  border-radius: 12px; padding: 2px 9px 2px 6px; font-size: 11px; cursor: pointer;
+  transition: all .15s;
+}
+.qchip i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.qchip:hover { border-color: var(--gold); background: #fdf7ea; color: var(--gold-deep); }
 .char-result { font-size: 12px; max-height: 260px; overflow-y: auto; }
 .char-block { border-bottom: 1px dashed var(--line); padding: 7px 0; }
 .char-block:last-child { border-bottom: none; }
@@ -220,9 +218,32 @@ body {
   padding: 0 7px; font-size: 10.5px; margin: 0 3px 3px 0; cursor: help;
 }
 
-/* 某日详情 */
+/* 某日详情：按游戏分组 */
+.day-detail {
+  margin-top: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+  animation: fadeUp .18s ease-out;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.day-detail h3 { margin-bottom: 8px; color: var(--gold-deep); }
+.detail-sub { margin-left: 8px; font-size: 11px; color: var(--ink-soft); font-weight: normal; }
+.dd-game { margin-bottom: 10px; }
+.dd-game:last-child { margin-bottom: 0; }
+.dd-gname {
+  font-size: 12px; color: var(--gc, var(--gold-deep)); font-weight: bold;
+  display: flex; align-items: center; gap: 5px; margin-bottom: 2px;
+}
+.dd-gname i { width: 8px; height: 8px; border-radius: 2px; background: var(--gc, var(--gold)); }
 .evt-list { list-style: none; padding: 0; }
-.evt-list li { padding: 10px 0; border-bottom: 1px dashed var(--line); }
+.evt-list li { padding: 8px 0; border-bottom: 1px dashed var(--line); }
 .evt-list li:last-child { border-bottom: none; }
 .evt-detail { margin-top: 5px; font-size: 11.5px; color: var(--ink-soft); line-height: 1.8; }
 
@@ -239,10 +260,6 @@ body {
 .ava[data-char], .ava.ph[data-char] { cursor: pointer; }
 .ava[data-char]:hover { transform: translateY(-2px); box-shadow: 0 3px 8px rgba(160, 130, 60, .4); }
 .ava-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-top: 6px; }
-.pair { display: inline-flex; align-items: center; gap: 3px; margin-right: 8px; white-space: nowrap; }
-.pool-five .pair { font-weight: bold; color: var(--phase1); }
-.pool-four .pair { color: var(--ink-soft); }
-.pool-five, .pool-four { display: flex; align-items: center; flex-wrap: wrap; gap: 2px 0; }
 
 /* 弹窗 */
 .modal {
@@ -253,8 +270,9 @@ body {
 .modal.hidden { display: none; }
 .modal-body {
   background: var(--panel); border: 1px solid var(--gold); border-radius: 14px;
-  width: 100%; max-width: 400px; max-height: 88vh; overflow-y: auto;
+  width: 100%; max-width: 420px; max-height: 88vh; overflow-y: auto;
   padding: 18px; position: relative; box-shadow: 0 12px 40px rgba(60, 45, 20, .35);
+  animation: fadeUp .18s ease-out;
 }
 .modal-close {
   position: absolute; right: 10px; top: 8px; border: none; background: transparent;
@@ -272,26 +290,14 @@ body {
 .char-head { display: flex; gap: 8px; align-items: center; }
 .char-info { min-width: 0; }
 
-.day-detail {
-  margin-top: 14px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 16px;
-  font-size: 14px;
-}
-.day-detail h3 { margin-bottom: 8px; color: var(--gold-deep); }
-.day-detail ul { padding-left: 18px; line-height: 2; }
-.hidden { display: none; }
-
-/* ===== 总览模式（四游戏合并） ===== */
-.day.all-view { min-height: 96px; padding-top: 5px; }
+/* 总览模式（四游戏合并） */
+.day.all-view { padding-top: 5px; }
 .day .stripes {
   position: absolute; top: 0; left: 0; right: 0;
   display: flex; flex-direction: column; gap: 1px; pointer-events: none;
 }
 .day .stripes i { display: block; height: 2px; }
-.day.all-view .evt { font-size: 10.5px; padding: 0 4px; line-height: 15px; }
+.day.all-view .evt { font-size: 10.5px; padding: 0 4px; line-height: 16px; }
 .evt.gline {
   display: flex; align-items: center; gap: 3px;
   background: #fff; color: var(--ink);
@@ -307,35 +313,9 @@ body {
 .evt.gline .tx { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .evt.gline .cnt { margin-left: auto; flex-shrink: 0; font-size: 9px; color: var(--ink-soft); }
 
-.legend .lg-note { color: var(--ink-soft); opacity: .85; }
-
 /* 未来提醒里的游戏标识 */
 .gdot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; vertical-align: 1px; }
 .gname { color: var(--ink-soft); font-size: 11px; margin-right: 4px; }
-
-/* 总览：各游戏在售 */
-.gp-row {
-  border: 1px solid var(--line); border-left: 3px solid var(--gc, #999);
-  border-radius: 8px; padding: 7px 9px; margin-bottom: 6px;
-  background: #fffdf8; cursor: pointer; transition: all .15s;
-}
-.gp-row:last-child { margin-bottom: 0; }
-.gp-row:hover { border-color: var(--gc, var(--gold)); box-shadow: 0 2px 8px rgba(160, 130, 60, .18); }
-.gp-name { font-size: 11px; color: var(--ink-soft); display: flex; align-items: center; gap: 5px; }
-.gp-name i { width: 6px; height: 6px; border-radius: 50%; background: var(--gc, #999); display: inline-block; flex-shrink: 0; }
-.gp-main { font-size: 12.5px; margin-top: 2px; line-height: 1.5; color: var(--ink); }
-.gp-sub { font-size: 11px; color: var(--ink-soft); margin-top: 1px; }
-
-/* 总览：各游戏版本 */
-.gv-row { padding: 6px 0; border-bottom: 1px dashed var(--line); cursor: pointer; }
-.gv-row:last-child { border-bottom: none; }
-.gv-row:hover .gn { color: var(--gc, var(--gold-deep)); }
-.gv-head { display: flex; align-items: center; gap: 6px; font-size: 12.5px; }
-.gv-head .gn { font-size: 12.5px; }
-.gv-head .gv { color: var(--gc, var(--gold-deep)); font-weight: bold; }
-.gv-head em { margin-left: auto; font-style: normal; font-size: 11px; color: var(--ink-soft); }
-.gv-bar { height: 4px; background: #eee5d0; border-radius: 2px; margin-top: 5px; overflow: hidden; }
-.gv-bar i { display: block; height: 100%; background: var(--gc, var(--gold)); }
 
 /* 总览详情里的游戏标签 */
 .evt.gtag { color: #fff; border: none; padding: 2px 8px; font-size: 11px; }
@@ -343,8 +323,6 @@ body {
   display: inline-block; color: #fff; border-radius: 4px;
   padding: 0 5px; font-size: 10px; margin-right: 4px; vertical-align: 1px;
 }
-.detail-sub { margin-left: 8px; font-size: 11px; color: var(--ink-soft); font-weight: normal; }
-
 
 .foot {
   text-align: center; font-size: 12px; color: var(--ink-soft);
@@ -355,4 +333,10 @@ body {
 @media (max-width: 900px) {
   .layout { flex-direction: column; }
   .side { width: 100%; }
+  .day { min-height: 76px; padding: 4px 5px; }
+  .day.all-view .evt { font-size: 9.5px; line-height: 13px; }
+  .topbar { padding: 10px 14px; }
+  .layout { padding: 12px 14px; }
+  .topbar h1 { font-size: 18px; letter-spacing: 2px; }
+  .subtitle { display: none; }
 }

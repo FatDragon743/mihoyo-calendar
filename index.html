@@ -12,7 +12,7 @@
     <span class="logo">✦</span>
     <div>
       <h1 id="appTitle">米哈游游戏日历</h1>
-      <p class="subtitle" id="appSub">四款游戏合并总览 · 历史事件 · 卡池阵容 · 未来预测 · 到期提醒</p>
+      <p class="subtitle">原神 · 星穹铁道 · 绝区零 · 星布谷地｜版本更新 · 卡池阵容 · 前瞻立绘 · 到期提醒</p>
     </div>
   </div>
   <div class="topbar-actions">
@@ -20,10 +20,6 @@
     <button id="btnToday" class="btn">回到今天</button>
   </div>
 </header>
-
-<nav class="gamebar">
-  <div id="gameTabs" class="game-tabs"></div>
-</nav>
 
 <main class="layout">
   <!-- 侧栏 -->
@@ -39,18 +35,19 @@
     </section>
 
     <section class="card" id="currentBannerCard">
-      <h2 id="bannerCardTitle">🎴 当前 UP</h2>
+      <h2>🎴 各游戏在售</h2>
       <div id="currentBanner"></div>
     </section>
 
     <section class="card" id="charCard">
-      <h2 id="charCardTitle">🔍 角色 UP 查询</h2>
-      <input id="charSearch" class="search" type="text" placeholder="输入角色名，如：芙宁娜 / 黄泉">
+      <h2>🔍 角色 UP 查询</h2>
+      <input id="charSearch" class="search" type="text" placeholder="输入角色名，如：芙宁娜 / 黄泉 / 艾莲">
+      <div id="quickChips" class="quick-chips"></div>
       <div id="charResult" class="char-result"><span class="muted">输入角色名可查其全部 UP 记录与距今时间</span></div>
     </section>
 
     <section class="card">
-      <h2 id="versionCardTitle">⏳ 当前版本</h2>
+      <h2>⏳ 各游戏版本</h2>
       <div id="currentVersion" class="current-version"></div>
     </section>
 

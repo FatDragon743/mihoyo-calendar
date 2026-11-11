@@ -5,8 +5,8 @@
 
   genshin   原神       File:<角色>.png / File:<角色>立绘.png
   starrail  星铁       File:<角色>.png / File:<角色>立绘.png
-  绝区零 / 星布谷地 Wiki 未使用统一的「角色名.png」命名，暂不抓取，
-  页面会退化成首字色块占位。
+  zzz       绝区零     File:角色头像-<角色>.png / File:角色立绘-<角色>.png
+  星布谷地 Wiki 暂无角色图，页面退化成首字色块占位。
 
 用法：
     python fetch_assets.py                 # 只下载缺失的
@@ -30,6 +30,8 @@ GAME_ASSETS = {
                 'width': 420, 'sub': ''},
     'starrail': {'wiki': 'sr', 'avatar': 'File:{n}.png', 'portrait': 'File:{n}立绘.png',
                  'width': 320, 'sub': 'sr'},
+    'zzz': {'wiki': 'zzz', 'avatar': 'File:角色头像-{n}.png', 'portrait': 'File:角色立绘-{n}.png',
+            'width': 420, 'sub': 'zzz'},
 }
 
 
