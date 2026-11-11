@@ -1,0 +1,67 @@
+name: 自动更新游戏数据
+
+# 每天北京时间 09:00（UTC 01:00）抓取一次版本与卡池数据
+# 只有数据真的发生变化才会提交，避免每天产生无意义 commit
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:        # 支持在 Actions 页面手动触发
+
+permissions:
+  contents: write           # 允许提交数据
+  pages: write              # 允许触发 Pages 重建
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 抓取最新版本与卡池数据
+        run: |
+          for i in 1 2 3; do
+            echo "===== 第 $i 次尝试 ====="
+            if python update_data.py; then exit 0; fi
+            echo "第 $i 次失败，20 秒后重试"
+            sleep 20
+          done
+          echo "::error::连续 3 次抓取失败，Wiki 可能临时不可达"
+          exit 1
+
+      - name: 判断是否有实质变化（忽略生成时间戳）
+        id: diff
+        run: python .github/scripts/has_changes.py
+
+      - name: 提交并推送数据
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data
+          git commit -m "chore(data): 自动更新游戏数据 $(date -u '+%Y-%m-%d')"
+          git push
+
+      - name: 触发 GitHub Pages 重建
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+
+      - name: 结果汇总
+        run: |
+          if [ "${{ steps.diff.outputs.changed }}" = "true" ]; then
+            echo "✅ 数据有变化，已提交并触发 Pages 重建"
+          else
+            echo "ℹ️ 数据无实质变化，本次不提交"
+          fi
