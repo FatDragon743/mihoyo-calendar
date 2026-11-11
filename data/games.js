@@ -1,6 +1,6 @@
 // 由 update_data.py 生成，来源：各游戏 bilibili Wiki + 官方公告
 const GAMES_DATA = {
- "generated": "2026-11-11 09:20",
+ "generated": "2026-11-11 09:54",
  "games": [
   {
    "id": "genshin",
@@ -5073,7 +5073,7 @@ const GAMES_DATA = {
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 09:20"
+   "generated": "2026-11-11 09:53"
   },
   {
    "id": "starrail",
@@ -7990,7 +7990,7 @@ const GAMES_DATA = {
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 09:20"
+   "generated": "2026-11-11 09:54"
   },
   {
    "id": "zzz",
@@ -9466,7 +9466,7 @@ const GAMES_DATA = {
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 09:20"
+   "generated": "2026-11-11 09:54"
   },
   {
    "id": "planet",
@@ -9544,7 +9544,7 @@ const GAMES_DATA = {
     }
    ],
    "banners": [],
-   "generated": "2026-11-11 09:20"
+   "generated": "2026-11-11 09:54"
   }
  ]
 };

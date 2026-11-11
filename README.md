@@ -22,6 +22,18 @@ python daily_digest.py --days 7          # 终端提醒摘要（支持 --game �
 
 静态站点无构建步骤，直接打开 `index.html` 或部署到任意静态托管即可。
 
+## 自动更新（GitHub Actions）
+
+`.github/workflows/update-data.yml` 每天北京时间 **09:00**（UTC 01:00）自动运行一次：
+
+1. 运行 `python update_data.py` 抓取四款游戏的最新版本与卡池数据
+2. `.github/scripts/has_changes.py` 对比数据是否有**实质变化**（忽略 `generated` 时间戳与换行差异）
+3. 有变化才提交到 `main`，并由 GitHub Pages 自动重建站点；没变化则跳过，不产生无意义 commit
+
+也可以在仓库 **Actions → 自动更新游戏数据 → Run workflow** 手动触发。
+
+> 提示：GitHub 会在仓库连续 60 天无提交活动后暂停定时任务，届时到 Actions 页面重新启用即可。
+
 ## 数据来源
 
 - [原神 Wiki](https://wiki.biligame.com/ys/) · [星穹铁道 Wiki](https://wiki.biligame.com/sr/) · [绝区零 Wiki](https://wiki.biligame.com/zzz/)（版本时间与卡池阵容为真实资料）
