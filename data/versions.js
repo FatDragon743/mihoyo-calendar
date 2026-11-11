@@ -84,7 +84,7 @@ const VERSION_DATA = [
   "version": "2.3",
   "major": false,
   "start": "2021-11-24",
-  "title": "皑尘与雪影",
+  "title": "《原神》「皑尘与雪影",
   "characters": "荒泷一斗、五郎",
   "region": ""
  },

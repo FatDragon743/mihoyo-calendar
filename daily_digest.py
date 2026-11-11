@@ -250,7 +250,7 @@ def digest(days=7, only=None):
     picked = [gid for gid in ORDER if gid in games and (not only or gid in only)]
     for gid in picked:
         lines.extend(game_section(games[gid], days, today))
-    lines.append('（版本与卡池为 Wiki 真实资料；标「前瞻/立绘/PV」等按官方发布节奏推算，以官方公告为准）')
+    lines.append('（版本与卡池取自官网公告与 Wiki 真实资料；标「前瞻/立绘/PV」等按官方发布节奏推算，以官方公告为准）')
     return '\n'.join(lines)
 
 

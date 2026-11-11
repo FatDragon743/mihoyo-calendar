@@ -1,6 +1,6 @@
 // 由 update_data.py 生成，来源：各游戏 bilibili Wiki + 官方公告
 const GAMES_DATA = {
- "generated": "2026-11-11 09:54",
+ "generated": "2026-11-11 10:20",
  "games": [
   {
    "id": "genshin",
@@ -128,7 +128,7 @@ const GAMES_DATA = {
      "version": "2.3",
      "major": false,
      "start": "2021-11-24",
-     "title": "皑尘与雪影",
+     "title": "《原神》「皑尘与雪影",
      "characters": "荒泷一斗、五郎",
      "region": ""
     },
@@ -5073,7 +5073,7 @@ const GAMES_DATA = {
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 09:53"
+   "generated": "2026-11-11 10:19"
   },
   {
    "id": "starrail",
@@ -7990,7 +7990,7 @@ const GAMES_DATA = {
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 09:54"
+   "generated": "2026-11-11 10:20"
   },
   {
    "id": "zzz",
@@ -8223,7 +8223,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "深海访客"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8248,7 +8249,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "防暴者Ⅵ型"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8273,7 +8275,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "玉壶青冰"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8298,7 +8301,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "淬锋钳刺"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8323,7 +8327,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "奔袭獠牙"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8348,7 +8353,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "灼心摇壶"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8373,7 +8379,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "时流贤者"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8398,7 +8405,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "焰心桂冠"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8433,7 +8441,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "霰落星殿"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8468,7 +8477,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "玲珑妆匣"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8503,7 +8513,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "心弦夜响"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8538,7 +8549,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "牺牲洁纯"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8573,7 +8585,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "索魂影眸"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8608,7 +8621,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "飞鸟星梦"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8643,7 +8657,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "千面日陨"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8678,7 +8693,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "青溟笼舍"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8713,7 +8729,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "福虓炉炉"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8721,7 +8738,7 @@ const GAMES_DATA = {
      "version": "2.1",
      "half": "上半",
      "start": "2025-07-16",
-     "end": "2025-07-28",
+     "end": "2025-08-05",
      "startTime": "11:00",
      "character": [
       {
@@ -8748,51 +8765,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "狸法七变化"
-      ]
-     }
-    },
-    {
-     "phase": "3.1上半",
-     "version": "3.1",
-     "half": "上半",
-     "start": "2025-07-29",
-     "end": "2025-07-28",
-     "startTime": "11:00",
-     "character": [
-      {
-       "name": "复乐园",
-       "five": [
-        "蕾米埃尔"
-       ],
-       "four": []
-      }
-     ],
-     "weapon": {
-      "five": [
-       "空羽复归之诗"
-      ]
-     }
-    },
-    {
-     "phase": "3.1上半",
-     "version": "3.1",
-     "half": "上半",
-     "start": "2025-07-29",
-     "end": "2025-08-05",
-     "startTime": "11:00",
-     "character": [
-      {
-       "name": "霓色天使",
-       "five": [
-        "爱芮"
-       ],
-       "four": []
-      }
-     ],
-     "weapon": {
-      "five": [
-       "壳中之灵"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8827,7 +8801,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "十方锻星"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8862,7 +8837,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "机巧心种"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8897,7 +8873,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "嚣枪喧焰"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8932,7 +8909,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "铸梦炉歌"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -8967,7 +8945,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "海妖摇篮"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9002,7 +8981,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "昨夜来电"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9037,7 +9017,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "怒目金刚"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9072,7 +9053,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "云霓孤光"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9107,7 +9089,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "思络成歌"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9116,7 +9099,7 @@ const GAMES_DATA = {
      "half": "下半",
      "start": "2026-03-04",
      "end": "2026-03-23",
-     "startTime": "12:00",
+     "startTime": "",
      "character": [
       {
        "name": "霓色天使",
@@ -9142,7 +9125,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "壳中之灵"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9177,7 +9161,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "霓虹妄想"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9186,7 +9171,7 @@ const GAMES_DATA = {
      "half": "下半",
      "start": "2026-04-15",
      "end": "2026-05-05",
-     "startTime": "12:00",
+     "startTime": "",
      "character": [
       {
        "name": "贪食进化论",
@@ -9212,7 +9197,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "鳞齿寻踪"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9247,7 +9233,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "朔月裁霜"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9282,7 +9269,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "辉骑面铠"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9317,7 +9305,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "琳琅鎏心"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9326,7 +9315,7 @@ const GAMES_DATA = {
      "half": "下半",
      "start": "2026-07-08",
      "end": "2026-07-28",
-     "startTime": "12:00",
+     "startTime": "",
      "character": [
       {
        "name": "天才不等式",
@@ -9352,7 +9341,38 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "首席跟班"
-      ]
+      ],
+      "four": []
+     }
+    },
+    {
+     "phase": "3.1上半",
+     "version": "3.1",
+     "half": "上半",
+     "start": "2026-07-29",
+     "end": "2026-08-18",
+     "startTime": "11:00",
+     "character": [
+      {
+       "name": "复乐园",
+       "five": [
+        "蕾米埃尔"
+       ],
+       "four": []
+      },
+      {
+       "name": "霓色天使",
+       "five": [
+        "爱芮"
+       ],
+       "four": []
+      }
+     ],
+     "weapon": {
+      "five": [
+       "空羽复归之诗"
+      ],
+      "four": []
      }
     },
     {
@@ -9361,7 +9381,7 @@ const GAMES_DATA = {
      "half": "下半",
      "start": "2026-08-19",
      "end": "2026-09-08",
-     "startTime": "12:00",
+     "startTime": "",
      "character": [
       {
        "name": "直到天空沉落",
@@ -9374,7 +9394,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "骁骑礼赞"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9403,7 +9424,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "猩红渴望"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9432,7 +9454,8 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "绯月银棺"
-      ]
+      ],
+      "four": []
      }
     },
     {
@@ -9461,12 +9484,44 @@ const GAMES_DATA = {
      "weapon": {
       "five": [
        "涅槃初翎"
-      ]
+      ],
+      "four": []
+     }
+    },
+    {
+     "phase": "3.3下半",
+     "version": "3.3",
+     "half": "下半",
+     "start": "2026-11-11",
+     "end": "2026-12-01",
+     "startTime": "",
+     "character": [
+      {
+       "name": "赛维里安",
+       "five": [
+        "赛维里安"
+       ],
+       "four": []
+      },
+      {
+       "name": "诺姆",
+       "five": [
+        "诺姆"
+       ],
+       "four": []
+      }
+     ],
+     "weapon": {
+      "five": [
+       "禁罪囚笼",
+       "首席跟班"
+      ],
+      "four": []
      }
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 09:54"
+   "generated": "2026-11-11 10:20"
   },
   {
    "id": "planet",
@@ -9544,7 +9599,7 @@ const GAMES_DATA = {
     }
    ],
    "banners": [],
-   "generated": "2026-11-11 09:54"
+   "generated": "2026-11-11 10:20"
   }
  ]
 };

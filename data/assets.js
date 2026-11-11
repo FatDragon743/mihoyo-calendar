@@ -579,6 +579,10 @@ const ASSETS_BY_GAME = {
    "avatar": "data/avatars/sr/星期日.png",
    "portrait": "data/portraits/sr/星期日.png"
   },
+  "星神★阿哈": {
+   "avatar": "data/avatars/sr/星神★阿哈.png",
+   "portrait": "data/portraits/sr/星神★阿哈.png"
+  },
   "景元": {
    "avatar": "data/avatars/sr/景元.png",
    "portrait": "data/portraits/sr/景元.png"

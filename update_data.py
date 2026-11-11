@@ -86,6 +86,7 @@ GAMES = OrderedDict([
             'CODE_NOTE': '前瞻直播兑换码一般在次日 23:59 失效，以直播提示为准',
         },
         'sources': [
+            {'label': '绝区零官网·新闻中心（主数据源，官方公告接口）', 'url': 'https://zzz.mihoyo.com/news'},
             {'label': '绝区零Wiki·版本新增内容', 'url': 'https://wiki.biligame.com/zzz/版本新增内容'},
             {'label': '绝区零Wiki·往期调频', 'url': 'https://wiki.biligame.com/zzz/往期调频'},
         ],
@@ -109,6 +110,97 @@ GAMES = OrderedDict([
         ],
     }),
 ])
+
+
+# ---------------------------------------------------------------- 官方公告接口
+# 米哈游官网「新闻中心」用的统一内容接口：act-api-takumi-static.mihoyo.com/content_v2_user/app/<appId>/getContentList
+# 返回结构化 JSON（标题 / 发布时间 / 正文 HTML），无需登录、签名或 cookie，比 B 站动态稳定得多。
+OFFICIAL = {
+    'genshin': {'app': '16471662a82d418a', 'notice': 721, 'news': 719,
+                'ref': 'https://ys.mihoyo.com/'},
+    'starrail': {'app': '1963de8dc19e461c', 'notice': 257, 'news': 255,
+                 'ref': 'https://sr.mihoyo.com/'},
+    'zzz': {'app': '706fd13a87294881', 'notice': 279, 'news': 278,
+            'ref': 'https://zzz.mihoyo.com/'},
+}
+OFFICIAL_HOST = 'https://act-api-takumi-static.mihoyo.com/content_v2_user/app'
+
+
+def official_list(gid: str, channel: str = 'notice', pages: int = 1,
+                  size: int = 40, retries: int = 3):
+    """拉取官网公告/新闻列表。channel: 'notice'(公告) / 'news'(新闻)。"""
+    conf = OFFICIAL.get(gid)
+    if not conf:
+        return []
+    chan = conf[channel]
+    out = []
+    for page in range(1, pages + 1):
+        url = (f"{OFFICIAL_HOST}/{conf['app']}/getContentList"
+               f'?iChanId={chan}&iPageSize={size}&iPage={page}&sLangKey=zh-cn')
+        last = None
+        for i in range(retries):
+            try:
+                req = urllib.request.Request(url, headers={'User-Agent': UA,
+                                                           'Referer': conf['ref']})
+                with urllib.request.urlopen(req, timeout=25) as r:
+                    d = json.loads(r.read().decode('utf-8'))
+                out.extend((d.get('data') or {}).get('list') or [])
+                last = None
+                break
+            except Exception as e:
+                last = e
+                time.sleep(1.5 * (i + 1))
+        if last:
+            if not out:
+                raise last
+            break
+        time.sleep(0.3)
+    return out
+
+
+def html_text(html: str) -> str:
+    """公告正文 HTML → 纯文本（保留段落换行）。"""
+    s = re.sub(r'<br\s*/?>', '\n', html or '', flags=re.I)
+    s = re.sub(r'</(p|div|li|tr)>', '\n', s, flags=re.I)
+    s = re.sub(r'<[^>]+>', '', s)
+    s = (s.replace('&nbsp;', ' ').replace('&amp;', '&')
+          .replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"'))
+    return re.sub(r'[ \t]+', ' ', s)
+
+
+# 各游戏的「版本更新」公告标题写法不同，这里统一抽出 版本号 + 版本主题 + 更新日
+UPDATE_TITLE = {
+    'genshin': re.compile(r'「?([^」]{0,40})」?(月之[一二三四五六七八九]|\d+\.\d+)版本更新说明'),
+    'starrail': re.compile(r'(\d+\.\d+)版本「([^」]+)」版本更新说明'),
+    'zzz': re.compile(r'(\d+\.\d+)版本「([^」]+)」(?:更新公告|更新说明)'),
+}
+
+
+def official_versions(gid: str, pages: int = 2) -> dict:
+    """官网「版本更新说明/更新公告」→ {版本号: {start, title}}，用于校正 Wiki 日期与主题。"""
+    pat = UPDATE_TITLE.get(gid)
+    if not pat:
+        return {}
+    out = {}
+    try:
+        items = official_list(gid, 'notice', pages=pages)
+    except Exception as e:
+        print(f'  · 官方公告接口不可用（{type(e).__name__}），跳过校正')
+        return {}
+    for it in items:
+        title = (it.get('sTitle') or '').strip()
+        m = pat.search(title)
+        if not m:
+            continue
+        if gid == 'genshin':
+            name, ver = m.group(1), m.group(2)
+        else:
+            ver, name = m.group(1), m.group(2)
+        day = (it.get('dtStartTime') or '')[:10]
+        if not ver or not re.match(r'^\d{4}-\d{2}-\d{2}$', day):
+            continue
+        out[ver] = {'start': day, 'title': clean(name)}
+    return out
 
 
 # ---------------------------------------------------------------- 网络
@@ -320,8 +412,26 @@ def zzz_versions():
     return rows
 
 
-def zzz_banners():
+# ---------------------------------------------------------------- 统一收尾
+# 调频「编号」→ 上下半：Wiki 里 0/1 都可能是上半（同一半有两个频段），2 为下半
+HALF_NAME = {'0': '上半', '1': '上半', '2': '下半', '3': '额外'}
+
+
+def _fix_year(day: str, ref: str) -> str:
+    """Wiki 偶发把年份写错（如 3.1 上期写成 2025/07/29），用版本起始日校正。"""
+    if not day or not ref:
+        return day
+    for _ in range(2):
+        if day >= add_days(ref, -210):
+            break
+        day = str(int(day[:4]) + 1) + day[4:]
+    return day
+
+
+def zzz_wiki_phases(versions: list):
+    """Wiki「往期调频」→ {期次: phase dict}。同一版本同一下半的多条频段合并。"""
     text = wt('zzz', '往期调频')
+    ref = {v['version']: v['start'] for v in versions}
 
     def tmpls(kind):
         out = []
@@ -340,27 +450,88 @@ def zzz_banners():
         for fs in tmpls(kind):
             ver, num = fs.get('版本', ''), fs.get('编号', '')
             start, stime = day_pair(fs.get('开始时间'))
-            if not ver or not num or not start:
-                continue
             end, _ = day_pair(fs.get('结束时间'))
-            key = f'{ver}·{num}'
-            p = phases.setdefault(key, {'phase': '', 'version': ver, 'num': num,
-                                        'start': start, 'end': end, 'startTime': stime,
-                                        'character': [], 'weapon': None})
+            if not ver or not start:
+                continue
+            start = _fix_year(start, ref.get(ver))
+            end = _fix_year(end, ref.get(ver))
+            half = HALF_NAME.get(num, '上半')
+            key = f'{ver}{half}'
+            p = phases.setdefault(key, {'phase': key, 'start': start, 'end': end,
+                                        'startTime': stime, 'character': [], 'weapon': None})
             if start < p['start']:
                 p['start'], p['startTime'] = start, stime
-            p['end'] = max(p['end'] or end, end or p['start'])
+            cands = [x for x in (p['end'], end) if x]
+            p['end'] = max(cands) if cands else p['start']
             if kind == '独家频段':
                 p['character'].append({'name': fs.get('名称') or '独家频段',
                                        'five': split_list(fs.get('S级代理人', '')),
                                        'four': split_list(fs.get('A级代理人', ''))})
             elif p['weapon'] is None:
-                p['weapon'] = {'five': split_list(fs.get('S级音擎', ''))}
-    return finalize_banners(phases, num_key=True)
+                p['weapon'] = {'five': split_list(fs.get('S级音擎', '')), 'four': []}
+    return phases
 
 
-# ---------------------------------------------------------------- 统一收尾
-HALF_NAME = {'1': '上半', '2': '下半', '3': '额外'}
+def zzz_official_phases(pages: int = 3):
+    """官网「N.N版本限时频段（上期/下期）」公告 → {期次: phase dict}。
+
+    Wiki 的「往期调频」要等编辑补录（下半常滞后几天、历史条目还有年份笔误），
+    而官方在每半开池前 2 天就会发公告，正文直接写明时间与限定 S 级代理人/音擎。
+    """
+    try:
+        items = official_list('zzz', 'notice', pages=pages)
+    except Exception as e:
+        print(f'  · 绝区零官方频段公告不可用（{type(e).__name__}），仅用 Wiki 数据')
+        return {}
+    out = OrderedDict()
+    for it in items:
+        title = (it.get('sTitle') or '').strip()
+        m = re.match(r'^(\d+\.\d+)版本限时频段（([上下])期）$', title)
+        if not m:
+            continue
+        ver, half = m.group(1), m.group(2) + '半'
+        body = html_text(it.get('sContent') or '')
+        rng = re.search(r'(\d{4}/\d{1,2}/\d{1,2})\s+\d{1,2}:\d{2}\s*[~～\-－]\s*'
+                        r'(\d{4}/\d{1,2}/\d{1,2})\s+\d{1,2}:\d{2}', body)
+        if not rng:
+            rng = re.search(r'(\d{4}/\d{1,2}/\d{1,2})\s*[~～\-－]\s*(\d{4}/\d{1,2}/\d{1,2})', body)
+        start, stime = day_pair(rng.group(1)) if rng else (None, '')
+        end, _ = day_pair(rng.group(2)) if rng else (None, '')
+        if not start:
+            continue
+
+        def names(kw):
+            mm = re.search(kw + r'\s*(.+?)(?:的)?调频获取概率', body, re.S)
+            if not mm:
+                return []
+            # 「[赛维里安(风·强攻)]、[诺姆(火·击破)]」→ 赛维里安 / 诺姆
+            return [x.strip() for x in re.findall(r'[\[【]?([^\[\]【】、()（）\n]+?)\s*[(（]', mm.group(1))]
+
+        agents = names(r'限定S级代理人')
+        engines = names(r'限定S级音擎')
+        chars = [{'name': a, 'five': [a], 'four': []} for a in agents] or \
+                [{'name': f'{ver}{half}', 'five': [], 'four': []}]
+        out[f'{ver}{half}'] = {'phase': f'{ver}{half}', 'start': start, 'end': end or start,
+                               'startTime': stime, 'character': chars,
+                               'weapon': {'five': engines, 'four': []} if engines else None}
+    return out
+
+
+def zzz_banners(versions: list):
+    """Wiki 打底 + 官方公告校准：官方给出准确的期次起止与限定 S 级，Wiki 补频段名与 4 星。"""
+    phases = zzz_wiki_phases(versions)
+    for key, o in zzz_official_phases().items():
+        p = phases.get(key)
+        if not p:
+            phases[key] = o
+            continue
+        p['start'], p['startTime'], p['end'] = o['start'], o['startTime'], o['end']
+        if not any(c['five'] for c in p['character']) and any(c['five'] for c in o['character']):
+            p['character'] = o['character']
+        if not p.get('weapon') and o.get('weapon'):
+            p['weapon'] = o['weapon']
+    return finalize_banners(phases)
+
 
 # Wiki「版本新增内容」表格偶有滞后（新版本已上线但表格未补），这里按官网公告补录
 TITLE_PATCH = {
@@ -409,13 +580,32 @@ def collect(gid: str):
     elif gid == 'starrail':
         versions, banners = sr_versions(), sr_banners()
     elif gid == 'zzz':
-        versions, banners = zzz_versions(), zzz_banners()
+        versions = zzz_versions()
+        banners = zzz_banners(versions)
     elif gid == 'planet':
         src = json.loads((GDIR / 'planet.source.json').read_text(encoding='utf-8'))
         versions, banners = [], []
         meta['milestones'] = src['milestones']
     else:
         raise SystemExit(f'未知游戏 {gid}')
+
+    # 官方「版本更新说明」校正版本日期与主题（Wiki 偶有笔误/滞后）
+    off = official_versions(gid)
+    if off:
+        fixed = 0
+        for v in versions:
+            o = off.get(v['version'])
+            if not o:
+                continue
+            if o['start'] != v['start']:
+                fixed += 1
+                v['start'] = o['start']
+                v['startSource'] = 'official'
+            if o.get('title') and o['title'] != v.get('title'):
+                v['title'] = o['title']
+        if fixed:
+            print(f'  · 官方公告校正了 {fixed} 个版本日期')
+        versions.sort(key=lambda o: o['start'])
 
     # 版本表滞后于卡池数据时补版本
     known = {v['version'] for v in versions}
