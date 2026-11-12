@@ -1,6 +1,6 @@
 // 由 update_data.py 生成，来源：各游戏 bilibili Wiki + 官方公告
 const GAMES_DATA = {
- "generated": "2026-11-11 10:20",
+ "generated": "2026-11-12 08:02",
  "games": [
   {
    "id": "genshin",
@@ -5073,7 +5073,7 @@ const GAMES_DATA = {
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 10:19"
+   "generated": "2026-11-12 08:02"
   },
   {
    "id": "starrail",
@@ -7990,7 +7990,7 @@ const GAMES_DATA = {
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 10:20"
+   "generated": "2026-11-12 08:02"
   },
   {
    "id": "zzz",
@@ -8020,6 +8020,10 @@ const GAMES_DATA = {
     "CODE_NOTE": "前瞻直播兑换码一般在次日 23:59 失效，以直播提示为准"
    },
    "sources": [
+    {
+     "label": "绝区零官网·新闻中心（主数据源，官方公告接口）",
+     "url": "https://zzz.mihoyo.com/news"
+    },
     {
      "label": "绝区零Wiki·版本新增内容",
      "url": "https://wiki.biligame.com/zzz/版本新增内容"
@@ -9521,7 +9525,7 @@ const GAMES_DATA = {
     }
    ],
    "milestones": [],
-   "generated": "2026-11-11 10:20"
+   "generated": "2026-11-12 08:02"
   },
   {
    "id": "planet",
@@ -9599,7 +9603,7 @@ const GAMES_DATA = {
     }
    ],
    "banners": [],
-   "generated": "2026-11-11 10:20"
+   "generated": "2026-11-12 08:02"
   }
  ]
 };
